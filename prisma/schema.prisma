@@ -1,0 +1,20 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["referentialIntegrity"]
+}
+
+datasource db {
+  provider             = "postgres"
+  url                  = env("DATABASE_URL")
+  referentialIntegrity = "prisma"
+}
+
+model ParisAirQuality {
+  id             String          @id @default(uuid())
+  ts             String 
+  aqius          Int
+  mainus         String
+  aqicn          Int
+  maincn         String
+  createdAt      DateTime        @default(now())
+}
